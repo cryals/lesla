@@ -16,7 +16,6 @@ import {
   Footer,
   TerminalIcon
 } from '../styles/TerminalStyles';
-import { statusColors } from '../styles/catppuccin';
 
 const Terminal: React.FC = () => {
   const {

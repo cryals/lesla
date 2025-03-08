@@ -1,4 +1,3 @@
-import { projects } from '../data/projects';
 import { services } from '../data/services';
 import { contacts } from '../data/contacts';
 import { fileIcons } from '../styles/catppuccin';

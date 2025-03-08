@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components';
-import { catppuccinMocha, statusColors } from './catppuccin';
-
-interface DraggableProps {
-  $isMobile?: boolean;
-}
+import { catppuccinMocha } from './catppuccin';
 
 interface StyledProps {
   $isMobile?: boolean;

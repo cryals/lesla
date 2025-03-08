@@ -1,0 +1,46 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 🟢
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          
+      - name: Install dependencies 📦
+        run: npm ci
+        
+      - name: Build 🏗️
+        run: npm run build
+        
+      - name: Setup for routing 🔄
+        run: |
+          # Обеспечиваем поддержку маршрутизации на GitHub Pages
+          cp dist/index.html dist/404.html
+        
+      - name: Ensure CNAME 📄
+        run: |
+          echo "lesla-term.ru" > ./dist/CNAME
+          
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
+          clean: true
+          single-commit: true

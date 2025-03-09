@@ -22,7 +22,7 @@
          \/____/          \/____/                  \/____/                  \/____/          \/____/         
                                                                                                              
 ```
-
+<div align="center">
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <div>
     <img src="https://img.shields.io/badge/react-087ea4?style=for-the-badge&logo=react&logoColor=fff&link=https%3A%2F%2Freact.dev%2F" alt="React">
@@ -35,7 +35,7 @@
     <img src="https://img.shields.io/badge/Yandex%20Metrika-E37400?style=for-the-badge&logo=google%20analytics&logoColor=white" alt="Metrika">
   </div>
 </div>
-
+</div>
 
 
 ## Описание

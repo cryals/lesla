@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { CommandLineContainer, CommandPrompt, CommandInput, SubmitButton } from '../styles/TerminalStyles';
+import { CommandLineContainer, CommandPrompt, CommandInput } from '../styles/TerminalStyles';
+import { catppuccinMocha } from '../styles/catppuccin';
 
 interface CommandLineProps {
   onExecute: (command: string) => void;
@@ -58,9 +59,22 @@ const CommandLine: React.FC<CommandLineProps> = ({ onExecute }) => {
         autoCapitalize="off"
       />
       {isMobile && (
-        <SubmitButton type="submit">
+        <button 
+          type="submit"
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: catppuccinMocha.green,
+            fontSize: '18px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '0 0.5rem',
+            cursor: 'pointer'
+          }}
+        >
           <i className="fas fa-terminal" />
-        </SubmitButton>
+        </button>
       )}
     </CommandLineContainer>
   );

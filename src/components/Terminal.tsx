@@ -26,7 +26,8 @@ const Terminal: React.FC = () => {
     contentRef
   } = useTerminal();
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const terminalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -51,6 +52,15 @@ const Terminal: React.FC = () => {
     }
   }, []);
 
+  useEffect(() => {
+    // Добавляем эффект загрузки
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 200);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleLicenseClick = (e: React.MouseEvent) => {
     e.preventDefault();
     try {
@@ -62,7 +72,7 @@ const Terminal: React.FC = () => {
 
   return (
     <>
-      <TerminalContainer $isMobile={isMobile}>
+      <TerminalContainer $isMobile={isMobile} style={{opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s ease'}}>
         <TerminalWindow 
           id="terminal-window" 
           ref={terminalRef}
@@ -90,7 +100,7 @@ const Terminal: React.FC = () => {
       
       <Footer $isMobile={isMobile}>
         <p>
-          Copyright (c) 2025 cryals под лицензией MIT{' '}
+          Copyright © 2025 cryals под лицензией MIT{' '}
           <a href="#" onClick={handleLicenseClick}>
             Посмотреть лицензию
           </a>

@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+          _____            _____                    _____                    _____            _____          
+         /\    \          /\    \                  /\    \                  /\    \          /\    \         
+        /::\____\        /::\    \                /::\    \                /::\____\        /::\    \        
+       /:::/    /       /::::\    \              /::::\    \              /:::/    /       /::::\    \       
+      /:::/    /       /::::::\    \            /::::::\    \            /:::/    /       /::::::\    \      
+     /:::/    /       /:::/\:::\    \          /:::/\:::\    \          /:::/    /       /:::/\:::\    \     
+    /:::/    /       /:::/__\:::\    \        /:::/__\:::\    \        /:::/    /       /:::/__\:::\    \    
+   /:::/    /       /::::\   \:::\    \       \:::\   \:::\    \      /:::/    /       /::::\   \:::\    \   
+  /:::/    /       /::::::\   \:::\    \    ___\:::\   \:::\    \    /:::/    /       /::::::\   \:::\    \  
+ /:::/    /       /:::/\:::\   \:::\    \  /\   \:::\   \:::\    \  /:::/    /       /:::/\:::\   \:::\    \ 
+/:::/____/       /:::/__\:::\   \:::\____\/::\   \:::\   \:::\____\/:::/____/       /:::/  \:::\   \:::\____\
+\:::\    \       \:::\   \:::\   \::/    /\:::\   \:::\   \::/    /\:::\    \       \::/    \:::\  /:::/    /
+ \:::\    \       \:::\   \:::\   \/____/  \:::\   \:::\   \/____/  \:::\    \       \/____/ \:::\/:::/    / 
+  \:::\    \       \:::\   \:::\    \       \:::\   \:::\    \       \:::\    \               \::::::/    /  
+   \:::\    \       \:::\   \:::\____\       \:::\   \:::\____\       \:::\    \               \::::/    /   
+    \:::\    \       \:::\   \::/    /        \:::\  /:::/    /        \:::\    \              /:::/    /    
+     \:::\    \       \:::\   \/____/          \:::\/:::/    /          \:::\    \            /:::/    /     
+      \:::\    \       \:::\    \               \::::::/    /            \:::\    \          /:::/    /      
+       \:::\____\       \:::\____\               \::::/    /              \:::\____\        /:::/    /       
+        \::/    /        \::/    /                \::/    /                \::/    /        \::/    /        
+         \/____/          \/____/                  \/____/                  \/____/          \/____/         
+                                                                                                             
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <div>
+    <img src="https://img.shields.io/badge/react-087ea4?style=for-the-badge&logo=react&logoColor=fff&link=https%3A%2F%2Freact.dev%2F" alt="React">
+    <img src="https://img.shields.io/badge/TypeScript-3178c6?style=for-the-badge&logo=typescript&logoColor=fff&link=https%3A%2F%2Fwww.typescriptlang.org%2F" alt="TypeScript">
+    <img src="https://img.shields.io/badge/Vite-3f375f?style=for-the-badge&logo=vite&logoColor=fff&link=https%3A%2F%2Fvite.dev%2F" alt="Vite">
+  </div>
+  <div>
+    <img src="https://img.shields.io/badge/neovim-588e3e?style=for-the-badge&logo=neovim&logoColor=fff&link=https%3A%2F%2Fneovim.io%2F" alt="Neovim">
+<img alt="Static Badge" src="https://img.shields.io/badge/telegram-blue?style=for-the-badge&logo=telegram&logoColor=fff&link=https%3A%2F%2Ft.me%2Fstopco_ru">
+    <img src="https://img.shields.io/badge/Yandex%20Metrika-E37400?style=for-the-badge&logo=google%20analytics&logoColor=white" alt="Metrika">
+  </div>
+</div>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+
+## Описание
+
+**Lesla Terminal** - это интерактивный веб-терминал, разработанный с использованием React и TypeScript. Этот проект предоставляет пользователям возможность взаимодействовать с командной строкой через веб-интерфейс. Если говорить простым языком, то это сатй обо мне `AL-S`
+
+## Установка
+
+```bash
+git clone https://github.com/cryals/lesla.git
+cd lesla
+npm install
+npm run dev
 ```
+
+## Лицензия
+
+Этот проект лицензирован под MIT License - смотрите файл [LICENSE.md](./LICENSE.md) для подробностей.

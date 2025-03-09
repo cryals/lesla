@@ -86,7 +86,7 @@ export const TerminalWindow = styled.div<StyledProps>`
   background-color: rgba(17, 17, 27, 0.85);
   backdrop-filter: blur(10px);
   border-radius: 12px;
-  box-shadow: 
+  box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(255, 255, 255, 0.05) inset,
     0 2px 0 rgba(255, 255, 255, 0.05) inset;
@@ -95,10 +95,10 @@ export const TerminalWindow = styled.div<StyledProps>`
   overflow: hidden;
   margin-bottom: 3rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  
+
   ${props => !props.$isMobile && css`
     &:hover {
-      box-shadow: 
+      box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.4),
         0 0 0 1px rgba(255, 255, 255, 0.1) inset,
         0 2px 0 rgba(255, 255, 255, 0.1) inset;
@@ -153,7 +153,7 @@ export const TerminalButton = styled.div<StyledProps>`
   background-color: ${props => props.color};
   cursor: pointer;
   transition: all 0.2s ease;
-  
+
   &:hover {
     opacity: 0.8;
     transform: scale(1.1);
@@ -170,30 +170,30 @@ export const TerminalContent = styled.div<StyledProps>`
   font-size: ${props => props.$isMobile ? '14px' : '16px'};
   line-height: 1.6;
   scroll-behavior: smooth;
-  
+
   &::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   &::-webkit-scrollbar-track {
     background: ${catppuccinMocha.mantle};
     border-radius: 4px;
   }
-  
+
   &::-webkit-scrollbar-thumb {
     background: ${catppuccinMocha.surface1};
     border-radius: 4px;
   }
-  
+
   &::-webkit-scrollbar-thumb:hover {
     background: ${catppuccinMocha.surface2};
   }
-  
+
   a {
     color: ${catppuccinMocha.blue};
     text-decoration: none;
     transition: all 0.2s ease;
-    
+
     &:hover {
       text-decoration: underline;
       color: ${catppuccinMocha.sapphire};
@@ -221,18 +221,18 @@ export const AsciiArt = styled.div`
   font-family: monospace;
   white-space: pre;
   text-align: center;
-  
+
   a {
     color: ${catppuccinMocha.blue};
     text-decoration: none;
     transition: all 0.2s ease;
-    
+
     &:hover {
       text-decoration: underline;
       color: ${catppuccinMocha.sapphire};
     }
   }
-  
+
   @media (max-width: 768px) {
     font-size: 14px;
     line-height: 1.0;
@@ -250,7 +250,7 @@ export const InfoOverlay = styled.div`
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -276,7 +276,7 @@ export const SocialLinks = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  
+
   a {
     color: ${catppuccinMocha.blue};
     text-decoration: none;
@@ -284,12 +284,12 @@ export const SocialLinks = styled.div`
     align-items: center;
     gap: 0.5rem;
     transition: all 0.2s ease;
-    
+
     &:hover {
       color: ${catppuccinMocha.sapphire};
       transform: translateY(-2px);
     }
-    
+
     i {
       font-size: 1.1em;
     }
@@ -347,7 +347,7 @@ export const CommandInput = styled.input`
   width: 100%;
   outline: none;
   transition: all 0.2s ease;
-  
+
   &:focus {
     outline: none;
   }
@@ -365,23 +365,29 @@ export const Footer = styled.footer<StyledProps>`
   bottom: 0;
   width: 100%;
   z-index: 10;
-  
+
   ${props => props.$isMobile && css`
     padding: 0.7rem;
     font-size: 0.7rem;
+
+    // Скрываем блок с лицензией на мобильных устройствах
+    @media (max-width: 768px) {
+      display: none;
+    }
   `}
-  
+
   a {
     color: ${catppuccinMocha.blue};
     text-decoration: none;
     transition: color 0.2s ease;
-    
+
     &:hover {
       color: ${catppuccinMocha.mauve};
       text-decoration: underline;
     }
   }
 `;
+
 
 // Modal
 export const ModalOverlay = styled.div`
@@ -409,7 +415,7 @@ export const ModalContent = styled.div`
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 
+  box-shadow:
     0 15px 40px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(255, 255, 255, 0.05) inset;
   animation: ${css`${slideUp} 0.4s ease`};
@@ -437,7 +443,7 @@ export const CloseButton = styled.button`
   font-size: 1.5rem;
   cursor: pointer;
   transition: color 0.2s ease;
-  
+
   &:hover {
     color: ${catppuccinMocha.red};
   }
@@ -446,15 +452,15 @@ export const CloseButton = styled.button`
 export const ModalBody = styled.div`
   color: ${catppuccinMocha.text};
   line-height: 1.6;
-  
+
   p {
     margin: 1rem 0;
   }
-  
+
   a {
     color: ${catppuccinMocha.blue};
     text-decoration: none;
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -496,7 +502,7 @@ export const CommandList = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
-  
+
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
@@ -508,7 +514,7 @@ export const CommandItem = styled.div`
   border-radius: 8px;
   border: 1px solid ${catppuccinMocha.surface0};
   transition: all 0.2s ease;
-  
+
   &:hover {
     background: ${catppuccinMocha.surface0};
     transform: translateY(-2px);
@@ -547,7 +553,7 @@ export const ProjectItem = styled.div<StyledProps>`
     return catppuccinMocha.blue;
   }};
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -609,7 +615,7 @@ export const ProjectLinkGroup = styled.div`
   display: flex;
   gap: 1rem;
   margin-top: 0.5rem;
-  
+
   a {
     display: flex;
     align-items: center;
@@ -618,7 +624,7 @@ export const ProjectLinkGroup = styled.div`
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.2s ease;
-    
+
     &:hover {
       color: ${catppuccinMocha.sapphire};
       transform: translateY(-2px);
@@ -641,13 +647,13 @@ export const ContactItem = styled.div`
   align-items: center;
   gap: 1rem;
   transition: all 0.2s ease;
-  
+
   &:hover {
     background: ${catppuccinMocha.surface0};
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
-  
+
   a {
     color: inherit;
     text-decoration: none;
@@ -691,13 +697,13 @@ export const OutputContainer = styled.div`
   margin-bottom: 1rem;
   white-space: pre-wrap;
   word-break: break-word;
-  
+
   a {
     color: ${catppuccinMocha.blue};
     text-decoration: none;
     transition: all 0.2s ease;
     display: inline-block;
-    
+
     &:hover {
       text-decoration: underline;
       color: ${catppuccinMocha.sapphire};
@@ -730,7 +736,7 @@ export const OutputText = styled.div<StyledProps>`
   font-family: monospace;
   line-height: 1.2;
   margin-top: 1rem;
-  
+
   a {
     color: ${catppuccinMocha.blue};
     text-decoration: none;
@@ -738,7 +744,7 @@ export const OutputText = styled.div<StyledProps>`
     padding: 0 0.2rem;
     border-radius: 3px;
     display: inline-block;
-    
+
     &:hover {
       text-decoration: underline;
       color: ${catppuccinMocha.sapphire};
@@ -752,24 +758,24 @@ export const OutputText = styled.div<StyledProps>`
     justify-content: space-between;
     margin-top: 1rem;
     flex-wrap: wrap;
-    
+
     @media (max-width: 768px) {
       flex-direction: column;
     }
   }
-  
+
   .command-container {
     display: flex;
     gap: 1rem;
     justify-content: space-between;
     margin-top: 1rem;
     flex-wrap: wrap;
-    
+
     @media (max-width: 768px) {
       flex-direction: column;
     }
   }
-  
+
   .ascii-art {
     flex: 0 0 auto;
     color: ${catppuccinMocha.mauve};
@@ -780,7 +786,7 @@ export const OutputText = styled.div<StyledProps>`
     font-size: 10px;
     transform: scale(0.9);
     transform-origin: left top;
-    
+
     @media (max-width: 768px) {
       font-size: 7px;
       transform: scale(0.8);
@@ -789,7 +795,7 @@ export const OutputText = styled.div<StyledProps>`
       overflow-x: auto;
     }
   }
-  
+
   .command-info {
     flex: 1;
     display: flex;
@@ -799,23 +805,23 @@ export const OutputText = styled.div<StyledProps>`
     white-space: normal;
     background-color: #1e1e2e;
     border-radius: 10px;
-    
+
     p {
       margin: 0.5rem 0;
-      
+
       i {
         width: 24px;
         margin-right: 0.5rem;
         text-align: center;
         color: ${catppuccinMocha.blue};
       }
-      
+
       a {
         margin-left: 0.5rem;
       }
     }
   }
-  
+
   .contact-info {
     flex: 1;
     display: flex;
@@ -825,19 +831,19 @@ export const OutputText = styled.div<StyledProps>`
     background-color: #1e1e2e;
     border-radius: 10px;
     white-space: normal;
-    
+
     p {
       margin: 0.7rem 0;
       display: flex;
       align-items: center;
-      
+
       i {
         width: 24px;
         margin-right: 1rem;
         text-align: center;
         color: ${catppuccinMocha.blue};
       }
-      
+
       a {
         margin-left: 0.5rem;
       }
@@ -918,4 +924,4 @@ export const HiddenCommandTitle = styled.div`
   line-height: 1.2;
   text-align: center;
   padding: 1rem 0;
-`; 
+`;

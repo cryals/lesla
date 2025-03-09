@@ -6,8 +6,6 @@ interface GlobalStyleProps {
 }
 
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
-  /* Не используем @import, так как это может вызывать проблемы в styled-components */
-  
   * {
     box-sizing: border-box;
     margin: 0;
@@ -122,4 +120,4 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
       font-size: 16px; /* Предотвращает зум на iOS */
     }
   }
-`; 
+`;

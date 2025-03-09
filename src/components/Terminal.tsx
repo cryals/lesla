@@ -72,7 +72,7 @@ const Terminal: React.FC = () => {
 
   return (
     <>
-      <TerminalContainer $isMobile={isMobile} style={{opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s ease'}}>
+      <TerminalContainer $isMobile={isMobile} style={{opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s ease', padding: isMobile ? '0 10px' : '0'}}>
         <TerminalWindow 
           id="terminal-window" 
           ref={terminalRef}
@@ -107,7 +107,7 @@ const Terminal: React.FC = () => {
         </p>
       </Footer>
       
-      {showLicense && <LicenseModal isOpen={showLicense} onClose={() => setShowLicense(false)} />}
+      {showLicense && <LicenseModal isOpen={showLicense} onClose={() => setShowLicense(false)} isMobile={isMobile} />}
     </>
   );
 };

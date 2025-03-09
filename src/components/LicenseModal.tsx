@@ -4,18 +4,17 @@ import { catppuccinMocha } from '../styles/catppuccin';
 interface LicenseModalProps {
   isOpen: boolean;
   onClose: () => void;
+  isMobile: boolean;
 }
 
-const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
+const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose, isMobile }) => {
   const [opacity, setOpacity] = useState(0);
   const [transform, setTransform] = useState('translateY(20px)');
   const [isVisible, setIsVisible] = useState(false);
   
-  // Анимация при открытии
   useEffect(() => {
     if (isOpen) {
       setIsVisible(true);
-      // Небольшая задержка для плавности
       const timer1 = setTimeout(() => setOpacity(1), 50);
       const timer2 = setTimeout(() => setTransform('translateY(0)'), 100);
       
@@ -26,12 +25,10 @@ const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
     }
   }, [isOpen]);
   
-  // Обработчик закрытия с анимацией
   const handleClose = () => {
     setOpacity(0);
     setTransform('translateY(20px)');
     
-    // Удаляем компонент после завершения анимации
     setTimeout(() => {
       setIsVisible(false);
       onClose();
@@ -54,7 +51,7 @@ const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
         backgroundColor: 'rgba(17, 17, 27, 0.7)',
         backdropFilter: 'blur(8px)',
         zIndex: 1000,
-        padding: '2rem',
+        padding: isMobile ? '1rem' : '2rem',
         opacity: opacity,
         transition: 'opacity 0.5s ease-in-out',
       }}
@@ -62,7 +59,7 @@ const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
     >
       <div 
         style={{
-          width: '100%',
+          width: isMobile ? '90%' : '100%',
           maxWidth: '700px',
           backgroundColor: catppuccinMocha.base,
           borderRadius: '12px',
@@ -75,7 +72,6 @@ const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
         }}
         onClick={e => e.stopPropagation()}
       >
-        {/* Шапка окна */}
         <div
           style={{
             display: 'flex',
@@ -87,7 +83,6 @@ const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
             userSelect: 'none'
           }}
         >
-          {/* Заголовок с иконкой весов */}
           <div
             style={{
               display: 'flex',
@@ -101,7 +96,6 @@ const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
             <i className="fas fa-balance-scale" style={{ color: catppuccinMocha.mauve }} /> Лицензия MIT
           </div>
           
-          {/* Кнопки окна */}
           <div style={{ display: 'flex', gap: '0.5rem' }}>
             <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: catppuccinMocha.yellow, cursor: 'pointer' }} />
             <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: catppuccinMocha.green, cursor: 'pointer' }} />
@@ -112,17 +106,16 @@ const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
           </div>
         </div>
         
-        {/* Содержимое */}
         <div
           style={{
-            padding: '2rem',
-            maxHeight: '70vh',
+            padding: isMobile ? '1rem' : '2rem',
+            maxHeight: isMobile ? '60vh' : '70vh',
             overflowY: 'auto'
           }}
         >
           <pre 
             style={{
-              fontSize: '14px',
+              fontSize: isMobile ? '12px' : '14px',
               whiteSpace: 'pre-wrap',
               color: catppuccinMocha.subtext0,
               lineHeight: 1.5,
@@ -158,4 +151,4 @@ SOFTWARE.`}
   );
 };
 
-export default LicenseModal; 
+export default LicenseModal;

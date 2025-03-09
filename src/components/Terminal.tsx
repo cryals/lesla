@@ -39,9 +39,9 @@ const Terminal: React.FC = () => {
         setIsMobile(false);
       }
     };
-    
+
     checkMobile();
-    
+
     try {
       window.addEventListener('resize', checkMobile);
       return () => {
@@ -57,7 +57,7 @@ const Terminal: React.FC = () => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
     }, 200);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -70,11 +70,20 @@ const Terminal: React.FC = () => {
     }
   };
 
+  const handleCloseClick = () => {
+    // Закрываем вкладку или перезагружаем страницу
+    if (confirm('Вы действительно хотите закрыть сайт?')) {
+      window.close(); // Это закроет вкладку, если она была открыта с помощью window.open()
+      // Если необходимо перезагрузить страницу, используйте:
+      // window.location.reload();
+    }
+  };
+
   return (
     <>
       <TerminalContainer $isMobile={isMobile} style={{opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s ease', padding: isMobile ? '0 10px' : '0'}}>
-        <TerminalWindow 
-          id="terminal-window" 
+        <TerminalWindow
+          id="terminal-window"
           ref={terminalRef}
           $isMobile={isMobile}
         >
@@ -86,10 +95,10 @@ const Terminal: React.FC = () => {
             <TerminalButtons>
               <TerminalButton color={catppuccinMocha.yellow} />
               <TerminalButton color={catppuccinMocha.green} />
-              <TerminalButton color={catppuccinMocha.red} />
+              <TerminalButton color={catppuccinMocha.red} onClick={handleCloseClick} />
             </TerminalButtons>
           </TerminalHeader>
-          
+
           <TerminalContent ref={contentRef} $isMobile={isMobile}>
             <WelcomeMessage />
             <History history={history} />
@@ -97,7 +106,7 @@ const Terminal: React.FC = () => {
           </TerminalContent>
         </TerminalWindow>
       </TerminalContainer>
-      
+
       <Footer $isMobile={isMobile}>
         <p>
           Copyright © 2025 cryals под лицензией MIT{' '}
@@ -106,10 +115,10 @@ const Terminal: React.FC = () => {
           </a>
         </p>
       </Footer>
-      
+
       {showLicense && <LicenseModal isOpen={showLicense} onClose={() => setShowLicense(false)} isMobile={isMobile} />}
     </>
   );
 };
 
-export default Terminal; 
+export default Terminal;

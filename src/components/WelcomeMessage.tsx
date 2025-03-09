@@ -28,7 +28,7 @@ const WelcomeMessage: React.FC = () => {
         color: catppuccinMocha.subtext0,
         fontSize: '0.8rem'
       }}>
-        <span>v1.1.3</span>
+        <span>v1.1.4</span>
         <a 
           href="https://github.com/cryals/lesla" 
           target="_blank" 

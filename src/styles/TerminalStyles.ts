@@ -898,6 +898,19 @@ export const ProjectsTitle = styled.div`
   padding: 1rem 0;
 `;
 
+export const PriceTitle = styled.div`
+  font-size: 1.2rem;
+  font-weight: bold;
+  animation: ${rainbowFlow} 10s infinite linear, ${glowPulse} 2s infinite ease-in-out;
+  animation-delay: -3.5s, -0.45s;
+  user-select: none;
+  white-space: pre;
+  font-family: monospace;
+  line-height: 1.2;
+  text-align: center;
+  padding: 1rem 0;
+`;
+
 // Стиль для заголовка CONTACT
 export const ContactTitle = styled.div`
   font-size: 1.2rem;

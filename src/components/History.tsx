@@ -11,6 +11,7 @@ import {
   HelpTitle,
   AboutTitle,
   ProjectsTitle,
+  PriceTitle,
   ContactTitle,
   HiddenCommandTitle
 } from '../styles/TerminalStyles';
@@ -32,6 +33,8 @@ const History: React.FC<HistoryProps> = ({ history }) => {
         return <AboutTitle dangerouslySetInnerHTML={{ __html: item.output.title }} />;
       case 'projects':
         return <ProjectsTitle dangerouslySetInnerHTML={{ __html: item.output.title }} />;
+        case 'price':
+          return <PriceTitle dangerouslySetInnerHTML={{ __html: item.output.title }} />;
       case 'contact':
         return <ContactTitle dangerouslySetInnerHTML={{ __html: item.output.title }} />;
       case 'fooo':

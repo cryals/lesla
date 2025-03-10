@@ -207,10 +207,9 @@ const commands: CommandType[] = [
 `,
     }),
   },
-
   {
     name: 'price',
-    description: 'Прайс-Лист с ценами и услугами',
+    description: 'Прайс-Лист. Ценамы и услуги',
     execute: () => ({
       title: `
 :::::::::  :::::::::  ::::::::::: ::::::::  :::::::::: 

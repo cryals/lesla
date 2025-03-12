@@ -195,7 +195,7 @@ const commands: CommandType[] = [
 
   <div style="text-align: left; flex-shrink: 0; align-self: center;">
     <span style="color: ${catppuccinMocha.blue}; white-space: pre-line; display: block;">
-<i class="fas fa-atlas" style="color: ${catppuccinMocha.blue};"></i> ALT Gnome Wiki: <a href="https://alt-gnome-wiki.ru" target="_blank" style="color: ${catppuccinMocha.green}; text-decoration: none;">alt-gnome-wiki.ru</a>
+<i class="fas fa-atlas" style="color: ${catppuccinMocha.blue};"></i> ALT Gnome Wiki: <a href="https://alt-gnome.wiki/" target="_blank" style="color: ${catppuccinMocha.green}; text-decoration: none;">alt-gnome.wiki</a>
 <span><span style={{color: catppuccinMocha.mauve}}>●</span>  Автор каких-то статей</span>
 <i class="fab fa-telegram" style="color: ${catppuccinMocha.blue};"></i> ALT KDE Telegram: <a href="https://t.me/alt_kde" target="_blank" style="color: ${catppuccinMocha.green}; text-decoration: none;">t.me/alt_kde</a>
 <span><span style={{color: catppuccinMocha.mauve}}>●</span>  Автор каких-то постов</span>
